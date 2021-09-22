@@ -1,0 +1,31 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "",
+        "limitSymbolsToIncludedHeaders": true
+      },
+      "includePath": [
+        "/home/firefly/ros_tutorial_ws/devel/include/**",
+        "/home/firefly/catkin_ws/devel/include/**",
+        "/opt/ros/melodic/include/**",
+        "/home/firefly/ros_tutorial_ws/src/beginner_tutorials/include/**",
+        "/home/firefly/catkin_ws/src/mavros/libmavconn/include/**",
+        "/home/firefly/catkin_ws/src/mavros/mavros/include/**",
+        "/home/firefly/catkin_ws/src/mavros/mavros_msgs/include/**",
+        "/home/firefly/catkin_ws/src/mavros/test_mavros/include/**",
+        "/home/firefly/catkin_ws/src/src/geometry2/tf2/include/**",
+        "/home/firefly/catkin_ws/src/src/geometry2/tf2_bullet/include/**",
+        "/home/firefly/catkin_ws/src/src/geometry2/tf2_eigen/include/**",
+        "/home/firefly/catkin_ws/src/src/geometry2/tf2_geometry_msgs/include/**",
+        "/home/firefly/catkin_ws/src/src/geometry2/tf2_kdl/include/**",
+        "/home/firefly/catkin_ws/src/src/geometry2/tf2_msgs/include/**",
+        "/home/firefly/catkin_ws/src/src/geometry2/tf2_ros/include/**",
+        "/home/firefly/catkin_ws/src/src/geometry2/tf2_sensor_msgs/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS"
+    }
+  ],
+  "version": 4
+}

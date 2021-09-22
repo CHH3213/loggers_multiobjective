@@ -1,0 +1,6 @@
+加速度分别为4和2 
+默认策略（default_vs_default-a4_2.4）：可以追上 21step
+默认策略vs神经网络（default_vs_network-a4_2.4）：可以追上
+神经网络vs默认策略（network_vs_dafault-a4_2.4）：追不上
+神经网络vs神经网络（network_vs_network-a4_2.4）：可以追上
+

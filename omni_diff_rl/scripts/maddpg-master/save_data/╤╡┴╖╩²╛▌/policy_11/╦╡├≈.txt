@@ -1,0 +1,6 @@
+加速度分别为4和2 --符合预期效果
+神经网络模型：采用相对位置训练，初始距离为随机（-4,4） 保存的神经网络模型在policy_5_success文件夹中
+默认策略（default_vs_default-a4_2）：追上
+默认策略vs神经网络（default_vs_network-a4_2）：追不上
+神经网络vs默认策略（network_vs_dafault-a4_2）：可以追上
+神经网络vs神经网络（network_vs_network-a4_2）：可以追上

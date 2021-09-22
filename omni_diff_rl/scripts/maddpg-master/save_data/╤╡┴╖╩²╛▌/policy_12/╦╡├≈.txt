@@ -1,0 +1,7 @@
+加速度分别为4和2.4 --
+神经网络模型与默认动力学模型一致，采用绝对位置绝对速度，训练时初始距离为（-5.21，5.21）保存的模型对应policy_12
+默认策略（default_vs_default-a4_2.4）：追不上
+默认策略vs神经网络（default_vs_network-a4_2.4）：可以逃掉
+神经网络vs默认策略（network_vs_dafault-a4_2.4）：可以追上
+神经网络vs神经网络（network_vs_network-a4_2.4）：可以追上
+

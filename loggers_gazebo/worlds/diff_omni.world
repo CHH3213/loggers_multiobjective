@@ -1,0 +1,187 @@
+<sdf version='1.6'>
+  <world name='default'>
+    <light name='sun' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose>0 0 10 0 -0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.5 -1</direction>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+    <model name='ground_plane'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+        <enable_wind>0</enable_wind>
+      </link>
+    </model>
+    <gravity>0 0 -9.8</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <physics name='default_physics' default='0' type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>1</shadows>
+    </scene>
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>0</latitude_deg>
+      <longitude_deg>0</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>0 12 12 0 0.8 -1.5708</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+    <wind/>
+<!--模型 -->
+    <model name='barrier'>
+    <pose frame=''>0 0 0  0 0 0</pose>
+      <include>
+        <uri>///home/firefly/model_editor_models/real_logger</uri><!--核心-->
+      </include>
+    </model>
+
+    <state world_name='default'>
+      <sim_time>93 52000000</sim_time>
+      <real_time>94 153090787</real_time>
+      <wall_time>1630597021 932732037</wall_time>
+      <iterations>93052</iterations>
+      <model name='ground_plane'>
+        <pose>0 0 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>0 0 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='logger0'>
+        <pose>-0.996428 0.00445 0.09 0 -0 0.002932</pose>
+        <scale>1 1 1</scale>
+        <link name='logger-chassis'>
+          <pose>-0.996428 0.00445 0.09 0 -0 0.002932</pose>
+          <velocity>-0.000695 7e-06 0.001743 5.7e-05 -0.013732 3e-05</velocity>
+          <acceleration>-1.42506 0.011227 3.64987 -3.03087 -0.811088 -3.10478</acceleration>
+          <wrench>-2.99263 0.023576 7.66473 0 -0 0</wrench>
+        </link>
+        <link name='logger-hat'>
+          <pose>-0.996428 0.00445 0.19 0 0 -0.003425</pose>
+          <velocity>-0.002051 1e-06 0.001735 5.7e-05 -0.013812 0</velocity>
+          <acceleration>-5.30771 -0.00529 3.47044 -3.02828 -0.651594 3.14156</acceleration>
+          <wrench>-2.65386 -0.002645 1.73522 0 -0 0</wrench>
+        </link>
+        <link name='logger-left_wheel'>
+          <pose>-1.12106 -0.120916 0.09 4e-06 0.047531 0.002931</pose>
+          <velocity>-0.000856 -3e-06 -5e-06 2.3e-05 -0.009923 -0.001467</velocity>
+          <acceleration>-1.81472 -0.005918 -0.010372 -3.11976 -1.02008 0.183641</acceleration>
+          <wrench>-0.907361 -0.002959 -0.005186 0 -0 0</wrench>
+        </link>
+        <link name='logger-right_wheel'>
+          <pose>-1.12179 0.129083 0.09 -5e-06 0.045842 0.002934</pose>
+          <velocity>-0.000859 2e-06 -5e-06 -1e-05 -0.009986 0.001575</velocity>
+          <acceleration>-1.81579 0.003666 -0.01043 3.04467 -0.97062 -0.015084</acceleration>
+          <wrench>-0.907896 0.001833 -0.005215 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='omni_car'>
+        <pose>1.06922 -0.012715 0.059995 -4.3e-05 -1e-06 0.007916</pose>
+        <scale>1 1 1</scale>
+        <link name='dummy'>
+          <pose>1.06922 -0.012715 0.059995 -4.3e-05 -1e-06 0.007916</pose>
+          <velocity>-2.5e-05 0.004221 9e-06 -0.08303 -0.000859 4.8e-05</velocity>
+          <acceleration>-0.025762 4.27431 0.008648 -1.34821 -0.873805 0.048273</acceleration>
+          <wrench>-0.212023 35.178 0.071171 0 -0 0</wrench>
+        </link>
+        <link name='wheel_1'>
+          <pose>1.16819 0.11807 0.05999 -1.57085 -0.033762 0.007918</pose>
+          <velocity>4.6e-05 0.004857 -0.010851 -0.081105 -0.000642 7.5e-05</velocity>
+          <acceleration>0.045982 4.85666 -10.8508 0.576445 -0.642019 0.074889</acceleration>
+          <wrench>0.022991 2.42833 -5.42541 0 -0 0</wrench>
+        </link>
+        <link name='wheel_2'>
+          <pose>0.968192 0.116487 0.05999 -1.57085 0.023694 0.007917</pose>
+          <velocity>-5.7e-05 0.004881 -0.010915 -0.081141 -0.000643 -0.000401</velocity>
+          <acceleration>-0.056918 4.88092 -10.9147 0.540107 -0.642529 -0.400999</acceleration>
+          <wrench>-0.028459 2.44046 -5.45734 0 -0 0</wrench>
+        </link>
+        <link name='wheel_3'>
+          <pose>1.17024 -0.141915 0.060001 -1.57083 -0.014697 0.007917</pose>
+          <velocity>-0.000107 0.004844 0.010927 -0.081121 -0.00183 8.7e-05</velocity>
+          <acceleration>-0.107103 4.84449 10.9274 -2.58069 -1.31189 -3.0549</acceleration>
+          <wrench>-0.053552 2.42225 5.46369 0 -0 0</wrench>
+        </link>
+        <link name='wheel_4'>
+          <pose>0.97025 -0.143498 0.060001 -1.57083 0.023853 0.007912</pose>
+          <velocity>-6e-06 0.004851 0.010912 -0.081226 5.8e-05 -0.0004</velocity>
+          <acceleration>-0.006349 4.85058 10.9115 0.455172 0.058273 -0.399648</acceleration>
+          <wrench>-0.003174 2.42529 5.45576 0 -0 0</wrench>
+        </link>
+      </model>
+      <light name='sun'>
+        <pose>0 0 10 0 -0 0</pose>
+      </light>
+    </state>
+  </world>
+</sdf>
