@@ -2,14 +2,10 @@
 **Tutorials of the contents in this repo are all located at [Docs](https://github.com/linZHank/two_loggers/tree/master/Docs). The order is: [system_setup](https://github.com/linZHank/two_loggers/blob/master/Docs/system_setup.md)->[create_urdf_tutorial](https://github.com/linZHank/two_loggers/blob/master/Docs/create_urdf_tutorial.md)->[gazebo_ros_tutorial](https://github.com/linZHank/two_loggers/blob/master/Docs/gazebo_ros_tutorial.md)**
 
 ## Setup
-- [Ubuntu 16.04](http://releases.ubuntu.com/16.04/) or [Ubuntu 18.04](http://releases.ubuntu.com/18.04/)
-- [ROS-Kinetic](http://wiki.ros.org/kinetic) in Ubuntu 16.04 or [ROS-Melodic](http://wiki.ros.org/melodic) in Ubuntu 18.04
-- [Python 2.7](https://www.python.org/download/releases/2.7/),
-- [TensorFlow 2](https://www.tensorflow.org/) and [TensorFlow Probability](https://www.tensorflow.org/probability)
-**The lastest Python2 supported tensorflow2 version is 2.1, tensorflow-probability version is 0.9, please make sure the right
-version is installed. Example: `pip install tensorflow==2.1` and `pip install tensorflow-probability==0.9`**
-
-> PyTorch or other deep learning libraries should be no problem working with the environment developed in this repo.
+- [Ubuntu 16.04](http://releases.ubuntu.com/16.04/) or [Ubuntu 18.04](http://releases.ubuntu.com/18.04/) or Ubuntu 20.04
+- [ROS-Kinetic](http://wiki.ros.org/kinetic) in Ubuntu 16.04 or [ROS-Melodic](http://wiki.ros.org/melodic) in Ubuntu 18.04 or ROS-Noetic in Ubuntu 20.04
+- [Python 2.7](https://www.python.org/download/releases/2.7/),or Python3
+- Pytorch-gpu or cpu edition
 
 - gazebo_ros_pkgs
 ``` console
