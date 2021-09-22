@@ -19,7 +19,7 @@ sudo apt-get install ros-melodic-gazebo-ros-pkgs ros-melodic-gazebo-ros-control
 - Clone this repo to your catkin workspace
 ```console
 cd ~/ros_ws/src
-git clone https://github.com/linZHank/two_loggers.git
+git clone https://github.com/CHH3213/loggers_multiobjective.git
 ```
 - Build ROS packages (`loggers_description`, `loggers_gazebo`, `loggers_control`)
 
@@ -33,56 +33,7 @@ source devel/setup.bash
 - make sure following two lines are in your `~/.bashrc` file.
 ``` bash
 source /opt/ros/melodic/setup.bash
-source /home/linzhank/ros_ws/devel/setup.bash
+source /home/firefly/ros_ws/devel/setup.bash
 ```
 > Replace `melodic` with `kinetic` in the lines above if you are using ROS-Kinetic.
-> You may want to copy all the contents in `two_loggers/loggers_gazebo/models/grey_wall_10/grew_wall` to `~/.gazebo/models/` if using Ubuntu 16.04 and ROS-Kinetic. e.g. `cp -a ~/ros_ws/src/two_loggers/loggers_gazebo/models/grey_wall_10/ ~/.gazebo/models/`
 
-## Environments
-Two environments are available right now: `this_repo/loggers_control/scripts/envs/se.py` and `this_repo/loggers_control/scripts/envs/de.py` both are with discrete action space.
-
-`se` indicates *solo escape*, the goal is control the **logger** robot exiting the room through the only opening on the south
-wall.
-
-`de` indicates *double escape*, the goal is control a two-robot team formed with two **logger** robots exiting the room while
-carrying a 2m rod.
-
-**Usage**
-
-> A segment of example code can be found in the end of each script.
-
-Open a terminal and enter the following commands to launch the simulation.
-```console
-roslaunch loggers_control double_logger_control.launch
-```
-In a new terminal (tab), enter the following commands to test the environment with random control signals.
-```console
-cd this_repo/loggers_control/scripts/envs
-python de.py
-```
-> substitute `this_repo` with actual repo path.
-
-> for solo escape env, `roslaunch loggers_control solo_logger_control.launch`, then navigate to the `envs`
-> location and run `python se.py`
-
-## Agents
-Two DQN agents are available and tested:
-1. [DQN](https://www.nature.com/articles/nature14236)
-2. [PPO](https://arxiv.org/abs/1707.06347)
-
-Location: `this_repo/loggers_control/scripts/agents`
-
-**Usage**
-
-Open a terminal and enter the following commands to launch the simulation.
-```console
-roslaunch loggers_control solo_logger_control.launch
-```
-In a new terminal (tab), enter the following commands to train a ppo controller in `solo escape` environment.
-```console
-rosrun loggers_control train_se_ppo.py
-```
-> Since the envs are updated, please refer to `legacy_20200817` branch for tested scripts training distributed controllers using
-> DQN algorithm.
-
-> Under developing scripts include new agents, new envs could be found in `devel` branch.
